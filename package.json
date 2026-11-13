@@ -1,0 +1,43 @@
+{
+  "name": "vana",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Paste a link, open the valve, let Vana handle the rest.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/burak57sn/vana.git"
+  },
+  "type": "module",
+  "scripts": {
+    "sidecars": "node scripts/fetch-sidecars.mjs",
+    "predev": "node scripts/fetch-sidecars.mjs",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "tauri": "tauri",
+    "desktop:dev": "npm run sidecars && tauri dev",
+    "desktop:build": "npm run sidecars && tauri build",
+    "android:init": "tauri android init",
+    "android:build": "tauri android build",
+    "check": "tsc --noEmit && cd src-tauri && cargo check"
+  },
+  "dependencies": {
+    "@fontsource/barlow": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@tauri-apps/api": "^2.12.4",
+    "@tauri-apps/plugin-clipboard-manager": "^2.5.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.4",
+    "@tauri-apps/cli": "^2.12.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "tailwindcss": "^4.3.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}
